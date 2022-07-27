@@ -62,5 +62,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         return 110
     }
     
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            let alert = UIAlertController(title: "Attenation!", message: "You'r selected \(indexPath.row + 1) row", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Close", style: .destructive, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
 }
 
