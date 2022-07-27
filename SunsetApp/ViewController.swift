@@ -41,7 +41,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CustomTableViewCell
        
 //MARK: - Here is AlertController for current Cell.
-        
         if cell.isSelected {
             let alert = UIAlertController(title: "Attenation!", message: "There is only one Cell", preferredStyle: .alert)
             let action = UIAlertAction(title: "Close", style:.destructive, handler: nil)
@@ -50,10 +49,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             self.present(alert, animated: true, completion: nil)
         }
-    
         
         cell.myLabel.text = sunset.title
-        cell.detailTextLabel?.text = "fd"
         cell.myImageView.image = UIImage(named: sunset.imageName)
         return cell
     }
@@ -61,7 +58,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110
     }
-    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0 {
